@@ -9,7 +9,7 @@
 #include <string.h>
 
 void setup(void);
-void send(int ch);
+void send(char ch);
 int get(void);
 char *out;
 char in,outchar;
@@ -17,17 +17,17 @@ int main(void)
 {
 
 	setup();
-	puts("Send or Receive (s or r) : ");
+	printf("Send or Receive (s or r) : ");
 	do{
 		outchar = getche();
-		if (outchar == 's' or outchar == 'S')
+		if (outchar == 's' || outchar == 'S')
 		{
 			printf("\nPC1 : ");
 			gets(out);
 			for(int i=0;i<strlen(out);i++)
 			{
 				send(out[i]);
-				if(outchar == 17)
+				if(out[i] == 17)
 				{
 					return 0;
 				}
@@ -48,7 +48,7 @@ int main(void)
 				}
 			}
 		}
-		else if(outchar == 'r' or outchar == 'R')
+		else if(outchar == 'r' || outchar == 'R')
 		{
 		    printf("\nPC2 : ");
 			while(1)
